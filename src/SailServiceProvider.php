@@ -60,7 +60,7 @@ class SailServiceProvider extends ServiceProvider
             copy(__DIR__.'/../stubs/sail', base_path('sail'));
 
             chmod(base_path('sail'), 0755);
-        })->purpose('Install Laravel Sail\'s default Docker Compose file');
+        })->describe('Install Laravel Sail\'s default Docker Compose file');
 
         Artisan::command('sail:publish', function () {
             $this->call('vendor:publish', ['--tag' => 'sail']);
@@ -70,7 +70,7 @@ class SailServiceProvider extends ServiceProvider
                 './docker/7.4',
                 file_get_contents(base_path('docker-compose.yml'))
             ));
-        })->purpose('Publish the Laravel Sail Docker files');
+        })->describe('Publish the Laravel Sail Docker files');
     }
 
     /**

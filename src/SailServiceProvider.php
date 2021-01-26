@@ -2,11 +2,10 @@
 
 namespace Laravel\Sail;
 
-use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 
-class SailServiceProvider extends ServiceProvider implements DeferrableProvider
+class SailServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.

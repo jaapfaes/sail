@@ -38,7 +38,7 @@ class SailServiceProvider extends ServiceProvider implements DeferrableProvider
             $environment = str_replace('REDIS_HOST=127.0.0.1', 'REDIS_HOST=redis', $environment);
 
             file_put_contents(base_path('.env'), $environment);
-        })->purpose('Install Laravel Sail\'s default Docker Compose file');
+        })->describe('Install Laravel Sail\'s default Docker Compose file');
 
         Artisan::command('sail:publish', function () {
             $this->call('vendor:publish', ['--tag' => 'sail']);
@@ -48,7 +48,7 @@ class SailServiceProvider extends ServiceProvider implements DeferrableProvider
                 './docker/8.0',
                 file_get_contents(base_path('docker-compose.yml'))
             ));
-        })->purpose('Publish the Laravel Sail Docker files');
+        })->describe('Publish the Laravel Sail Docker files');
     }
 
     /**
